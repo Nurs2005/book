@@ -1,0 +1,10 @@
+.wishList{
+    padding-top: 50px;
+    display: flex;
+    margin: 0px auto;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    justify-content: space-between;
+    width: 100%;
+
+}

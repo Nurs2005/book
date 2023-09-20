@@ -1,0 +1,63 @@
+.card{
+    width: 300px;
+    position: relative;
+    min-height: 450px;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.imgBook{
+}
+.img{
+    width: 45%;
+    height: 45%;
+}
+.text{
+    text-align: left;
+    height: 50px;
+    margin-bottom: 50px;
+    overflow: hidden scroll;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+.Btn{
+    position: absolute;
+    cursor: pointer;
+    border: none;
+    left: 0px;
+    top: 0px;
+    padding:5px;
+    margin: 5px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.svg{
+    padding: 5px;
+}
+.pUrl{
+    background-color: aqua;
+    border: none;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.buy{
+    border-radius: 0px 0px 10px 10px;
+
+    background-color: aqua;
+}

@@ -1,0 +1,15 @@
+.wishMainBlock{
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+.wishImg{
+    width: 100px;
+    height: 100px;
+}
+.wishBlock{
+width: 55%;
+margin: 0 auto;
+text-align: center;
+}

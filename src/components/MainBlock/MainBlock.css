@@ -4,7 +4,7 @@
     margin: 0px auto;
     -webkit-box-pack: center;
     justify-content: center;
-    width: 1200px;
+    width: 90%;
     height: 100vh;
 }
 .main{
@@ -45,12 +45,100 @@
     overflow-clip-margin: content-box;
     overflow: clip;
 }
-.listBlockBooks{
-    display: flex;
-    margin: 0px auto;
-    flex-wrap: wrap;
-    -webkit-box-pack: center;
-    justify-content: center;
-    width: 1200px;
-    height: 25vh;
+@media(max-width:1122px){
+    .Block{
+        display: flex;
+        margin: 0px auto;
+        -webkit-box-pack: center;
+        justify-content: center;
+        width: 90%;
+        height: 100vh;
+    }
+    .main{
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .mainBlock{
+        flex-direction: column;
+        display: flex;
+        margin: 0px auto;
+        -webkit-box-pack: center;
+        justify-content: center;
+        width:50%;
+        height: 100vh;
+    }
+    .searchBlock{
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0px auto;
+    }
+    .listBlockImg{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    .imgList{
+        max-width: 350px;
+        overflow-clip-margin: content-box;
+        overflow: clip;
+    }
 }
+@media(max-width:769px){
+    .Block{
+        display: flex;
+        margin: 0px auto;
+        -webkit-box-pack: center;
+        justify-content: center;
+        width: 90%;
+        height: 100vh;
+    }
+    .main{
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .mainBlock{
+        flex-direction: column;
+        display: flex;
+        margin: 0px auto;
+        -webkit-box-pack: center;
+        justify-content: center;
+        width:50%;
+        height: 100vh;
+    }
+    .searchBlock{
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0px auto;
+    }
+    .listBlockImg{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    .imgList{
+        max-width: 350px;
+        overflow-clip-margin: content-box;
+        overflow: clip;
+    }
+}
+

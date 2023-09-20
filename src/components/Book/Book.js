@@ -1,13 +1,24 @@
-import React from 'react';
-import { useBook } from '../../store/useBook';
-import './BookLists.css'
-export default function Booklists({ book }) {
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useBook } from "../../store/useBook";
+
+import "./Book.css";
+export default function Book({ book }) {
+  const navigate = useNavigate();
   const wishlist = useBook((state) => state.wishlist);
   const addBookToWishlist = useBook((state) => state.addBookToWishlist);
   const deleteBookFromWishlist = useBook((state) => state.deleteBook);
 
-  const isBookInWishlist = wishlist.some((wishedBook) => wishedBook.id === book.id);
-
+  const isBookInWishlist = wishlist.some(
+    (wishedBook) => wishedBook.id === book.id
+  );
+  const urr = () => {
+    const URL = book.saleInfo.buyLink;
+    const ur = URL.indexOf('id=');
+    const err = URL.substring(ur);
+    const fullLink = `https://play.google.com/store/books/details?${err}`;
+    window.location.href = fullLink;
+  }
   const handleToggleWishlist = () => {
     if (isBookInWishlist) {
       deleteBookFromWishlist(book.id);
@@ -15,21 +26,20 @@ export default function Booklists({ book }) {
       addBookToWishlist(book);
     }
   };
-
   return (
     <div className="card" key={book.id}>
-      <button>
+      <button className="Btn">
         <svg
           onClick={handleToggleWishlist}
           style={{
-            color: isBookInWishlist ? 'red' : 'blue',
+            color: isBookInWishlist ? "red" : "blue",
           }}
           stroke="currentColor"
           fill="currentColor"
           strokeWidth="0"
           viewBox="0 0 512 512"
           color="gray"
-          className="sc-iBPRYJ cOWINi"
+          className="svg"
           height="1em"
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
@@ -42,14 +52,20 @@ export default function Booklists({ book }) {
       <p>{book.volumeInfo.publishedDate}</p>
       <p>{book.volumeInfo.authors}</p>
       <div className="imgBook">
-      <img
-        className=""
-        src={book.volumeInfo.imageLinks?.smallThumbnail || 'https://via.placeholder.com/100x150'}
-        alt=""
-      />
+        <img
+          className=""
+          src={
+            book.volumeInfo.imageLinks?.smallThumbnail ||
+            "https://via.placeholder.com/100x150"
+          }
+          alt=""
+        />
       </div>
       <div className="text">
         <p>{book.volumeInfo.description}</p>
+      </div>
+      <div className="buy">
+      <p className="pUrl" onClick={urr}>Перейти на путь</p>
       </div>
     </div>
   );
