@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import Header from '../Header/Header';
 import './MainBlock.css';
-import { useBook } from '../../store/useBook';
+import Booklists from '../BookLists/BookLists';
+import SearchForn from '../SerachForm/SearchForm';
 
 export default function MainBlock() {
   const [books, setBooks] = useState([]);
   const [query, setQuery] = useState('');
-  const addBookToWishlist = useBook((state) => state.addBookToWishlist);
+  const [activeBtn, setActiveBtn] = useState(false);
 
   const searchBooks = async () => {
     try {
-      const url = `https://www.googleapis.com/books/v1/volumes?q=${query}`;
+      const url = `https://www.googleapis.com/books/v1/volumes?q=${query}:keyes&AIzaSyBEFmlKhVd6DlC8470CAXRQU7BlYjKW4Iw=AIzaSyBEFmlKhVd6DlC8470CAXRQU7BlYjKW4Iw`;
       const res = await fetch(url);
       const data = await res.json();
       setBooks(data.items || []);
@@ -20,55 +21,38 @@ export default function MainBlock() {
   };
 
   const handleFormSubmit = (e) => {
+    setActiveBtn(true)
     e.preventDefault();
     searchBooks();
-  };
-
-  const handleAddToWishlist = (book) => {
-    addBookToWishlist(book); 
   };
 
   return (
     <div className="main">
       <Header />
-      <form
-        className='form-group d-flex align-items-center justify-content-center mx-auto mb-4 Form'
-        style={{ width: '80%' }}
-        onSubmit={handleFormSubmit}
-      >
-        <input
-          placeholder='Search for books'
-          className="form-control form"
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <button type="submit">Search</button>
-      </form>
-      <div className="listBlock">
+      <div className="mainBlock">
+        <div className="Block">
+          <div className="searchBlock">
+            <h1>Book finder</h1>
+          <SearchForn handleFormSubmit={handleFormSubmit} setQuery={setQuery} query={query}/>
+          </div>
+          <div className="listBlockImg">
+          <img className='imgList' src="https://book-finder-app-git-master-klebermrocha.vercel.app/static/media/home.3f4fc5b7.svg" alt="" />
+        </div>
+        </div>
+        <div className="listBlockBooks">
         {books.length > 0 ? (
           books.map((book) => (
-            <div className="card" key={book.id}>
-              <p onClick={() => handleAddToWishlist(book)}><span>♥</span> Wishlist</p>
-              <p>{book.volumeInfo.title}</p>
-              <p>{book.volumeInfo.publishedDate}</p>
-              <p>{book.volumeInfo.authors}</p>
-              <img
-                className='img'
-                src={
-                  book.volumeInfo.imageLinks?.smallThumbnail ||
-                  'https://via.placeholder.com/100x150'
-                }
-                alt=""
-              />
-              <textarea>{book.volumeInfo.description}</textarea>
-            </div>
+            <Booklists book={book} key={book.id} />
           ))
         ) : (
+          <>
+          {!activeBtn ? (''):(
           <div className="col">
-            <p>No books found.</p>
-          </div>
+          <p>No books found.</p>
+        </div>)}
+        </>
         )}
+      </div>
       </div>
     </div>
   );

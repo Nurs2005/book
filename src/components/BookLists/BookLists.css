@@ -1,0 +1,32 @@
+.card{
+    width: 30%;
+    position: relative;
+    height: 500px;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 15px;
+}
+.imgBook{
+}
+.img{
+    width: 45%;
+    height: 45%;
+}
+.text{
+    text-align: left;
+    height: 50px;
+    margin-bottom: 50px;
+    overflow: hidden scroll;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}

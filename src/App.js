@@ -5,12 +5,12 @@ import WishMainBlock from './components/WishMainBlock/WishMainBlock';
 function App() {
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<MainBlock/>} />
-        <Route path="/WishList" element={<WishMainBlock/>} />
-      </Routes>
+          <Routes>
+            <Route path="/" element={<MainBlock />} />
+            <Route path="/WishList" element={<WishMainBlock />} />
+          </Routes>
     </div>
   );
 }
 
-export default App;
+export default App

@@ -18,4 +18,10 @@ export const useBook = create((set) => ({
       localStorage.setItem('wishlist', JSON.stringify(updatedWishlist)); 
       return { wishlist: updatedWishlist };
     }),
+    deleteBook: (id) =>
+    set((state) => {
+      const updatedWishlist = state.wishlist.filter((book) => book.id !== id);
+      localStorage.setItem('wishlist', JSON.stringify(updatedWishlist)); 
+      return { wishlist: updatedWishlist };
+    }),
 }));

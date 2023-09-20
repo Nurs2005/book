@@ -1,23 +1,11 @@
-.card{
+
+.Block{
     display: flex;
+    margin: 0px auto;
+    -webkit-box-pack: center;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 30%;
-    margin: 20px;
-    height: auto;
-    border: 1px solid black;
-}
-.img{
-    width: 45%;
-    height: 45%;
-}
-.listBlock{
-    margin: 0 auto;
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    width: 1200px;
+    height: 100vh;
 }
 .main{
     width: 100%;
@@ -25,4 +13,44 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+.mainBlock{
+    flex-direction: column;
+    display: flex;
+    margin: 0px auto;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 1000px;
+    height: 100vh;
+}
+.searchBlock{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0px auto;
+}
+.listBlockImg{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+.imgList{
+    width: 700px;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+.listBlockBooks{
+    display: flex;
+    margin: 0px auto;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 1200px;
+    height: 25vh;
 }
