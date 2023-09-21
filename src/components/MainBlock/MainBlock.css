@@ -67,7 +67,7 @@
         margin: 0px auto;
         -webkit-box-pack: center;
         justify-content: center;
-        width:50%;
+        width:90%;
         height: 100vh;
     }
     .searchBlock{
@@ -93,7 +93,7 @@
         overflow: clip;
     }
 }
-@media(max-width:769px){
+@media(max-width:768px){
     .Block{
         display: flex;
         margin: 0px auto;
@@ -136,9 +136,54 @@
         vertical-align: baseline;
     }
     .imgList{
-        max-width: 350px;
+        max-width: 320px;
         overflow-clip-margin: content-box;
         overflow: clip;
     }
 }
+@media(max-width:624px){
+    .Block{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .main{
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .mainBlock{
+        flex-direction: column;
+        display: flex;
+        margin: 0px auto;
+        -webkit-box-pack: center;
+        justify-content: center;
+        width:50%;
+        height: 100vh;
+    }
+    .searchBlock{
+        display: flex;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0px auto;
+    }
+    .listBlockImg{
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    .imgList{
+        max-width: 320px;
+        overflow-clip-margin: content-box;
+        overflow: clip;
+    }
+}
+
 

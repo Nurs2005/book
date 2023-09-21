@@ -4,7 +4,6 @@ import { useBook } from "../../store/useBook";
 
 import "./Book.css";
 export default function Book({ book }) {
-  const navigate = useNavigate();
   const wishlist = useBook((state) => state.wishlist);
   const addBookToWishlist = useBook((state) => state.addBookToWishlist);
   const deleteBookFromWishlist = useBook((state) => state.deleteBook);
@@ -28,9 +27,23 @@ export default function Book({ book }) {
   };
   return (
     <div className="card" key={book.id}>
-      <button className="Btn">
+      <div className="inCard">
+      <strong className="bookTitle">{book.volumeInfo.title}</strong>
+      <span>{book.volumeInfo.publishedDate}</span>
+      <p>{book.volumeInfo.authors}</p>
+        <img
+          className="img"
+          src={
+            book.volumeInfo.imageLinks?.smallThumbnail ||
+            "https://via.placeholder.com/100x150"
+          }
+          alt=""
+        />
+      <div className="text">
+        <p>{book.volumeInfo.description}</p>
+      </div>
+      <button onClick={handleToggleWishlist} className="Btn">
         <svg
-          onClick={handleToggleWishlist}
           style={{
             color: isBookInWishlist ? "red" : "blue",
           }}
@@ -46,26 +59,9 @@ export default function Book({ book }) {
         >
           <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path>
         </svg>
-        <span>Wishlist</span>
+        Wishlist
       </button>
-      <p>{book.volumeInfo.title}</p>
-      <p>{book.volumeInfo.publishedDate}</p>
-      <p>{book.volumeInfo.authors}</p>
-      <div className="imgBook">
-        <img
-          className=""
-          src={
-            book.volumeInfo.imageLinks?.smallThumbnail ||
-            "https://via.placeholder.com/100x150"
-          }
-          alt=""
-        />
-      </div>
-      <div className="text">
-        <p>{book.volumeInfo.description}</p>
-      </div>
-      <div className="buy">
-      <p className="pUrl" onClick={urr}>Перейти на путь</p>
+      <a className="pUrl" onClick={urr}>Перейти на путь</a>
       </div>
     </div>
   );
